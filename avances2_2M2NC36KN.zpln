@@ -1,0 +1,829 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n# Análisis exploratorio de datos",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.874",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eAnálisis exploratorio de datos\u003c/h1\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149874_692137748",
+      "id": "paragraph_1753845883891_291902054",
+      "dateCreated": "2025-07-31 21:09:09.874",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## Carga de datos \n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.874",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eCarga de datos\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149874_1031740045",
+      "id": "paragraph_1753845903372_2051279487",
+      "dateCreated": "2025-07-31 21:09:09.874",
+      "status": "READY"
+    },
+    {
+      "text": "val dfNacidos \u003d spark\n  .read\n  .option(\"header\", \"true\")\n  .option(\"sep\", \";\")\n  .option(\"inferSchema\", \"true\")\n  .csv(\"/workspace/proyecto_Programacion/pavan-s10/ENV_2023.csv\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfNacidos\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 45 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149874_1561797329",
+      "id": "paragraph_1753845913466_1438530136",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "print(s\"Registros (filas): ${dfNacidos.count}, Variables (columnas): ${dfNacidos.columns.length}\")",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Registros (filas): 241295, Variables (columnas): 47"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149875_1980443801",
+      "id": "paragraph_1753845918217_1421401059",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "dfNacidos.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- prov_insc: string (nullable \u003d true)\n |-- cant_insc: string (nullable \u003d true)\n |-- parr_insc: string (nullable \u003d true)\n |-- fecha_insc: string (nullable \u003d true)\n |-- anio_insc: string (nullable \u003d true)\n |-- mes_insc: string (nullable \u003d true)\n |-- dia_insc: string (nullable \u003d true)\n |-- sexo: string (nullable \u003d true)\n |-- fecha_nac: string (nullable \u003d true)\n |-- anio_nac: integer (nullable \u003d true)\n |-- mes_nac: string (nullable \u003d true)\n |-- dia_nac: integer (nullable \u003d true)\n |-- talla: string (nullable \u003d true)\n |-- peso: string (nullable \u003d true)\n |-- sem_gest: string (nullable \u003d true)\n |-- tipo_part: string (nullable \u003d true)\n |-- lugar_ocur: string (nullable \u003d true)\n |-- apgar1: string (nullable \u003d true)\n |-- apgar5: string (nullable \u003d true)\n |-- p_emb: string (nullable \u003d true)\n |-- prov_nac: string (nullable \u003d true)\n |-- cant_nac: string (nullable \u003d true)\n |-- parr_nac: string (nullable \u003d true)\n |-- area_nac: string (nullable \u003d true)\n |-- asis_por: string (nullable \u003d true)\n |-- nac_mad: string (nullable \u003d true)\n |-- cod_pais: string (nullable \u003d true)\n |-- fecha_mad: string (nullable \u003d true)\n |-- anio_mad: string (nullable \u003d true)\n |-- mes_mad: string (nullable \u003d true)\n |-- dia_mad: string (nullable \u003d true)\n |-- edad_mad: string (nullable \u003d true)\n |-- con_pren: string (nullable \u003d true)\n |-- num_emb: string (nullable \u003d true)\n |-- num_par: string (nullable \u003d true)\n |-- hij_viv: integer (nullable \u003d true)\n |-- hij_vivm: string (nullable \u003d true)\n |-- hij_nacm: string (nullable \u003d true)\n |-- etnia: string (nullable \u003d true)\n |-- est_civil: string (nullable \u003d true)\n |-- niv_inst: string (nullable \u003d true)\n |-- sabe_leer: string (nullable \u003d true)\n |-- prov_res: string (nullable \u003d true)\n |-- cant_res: string (nullable \u003d true)\n |-- parr_res: string (nullable \u003d true)\n |-- area_res: string (nullable \u003d true)\n |-- residente: string (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149875_1908464268",
+      "id": "paragraph_1753845924751_1902744958",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "dfNacidos.describe().show()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----------------+---------+--------------------+----------+------------------+----------+------------------+------+----------+------------------+----------+------------------+------------------+------------------+-----------------+---------+---------------+------------------+------------------+------+----------------+----------+--------------------+--------+--------------------+---------------+---------------+----------+------------------+---------------+------------------+-----------------+-----------------+------------------+------------------+------------------+--------------------+-------------------+--------------------+---------+--------------------+---------------+----------------+----------+--------------------+--------+------------+\n|summary|       prov_insc|cant_insc|           parr_insc|fecha_insc|         anio_insc|  mes_insc|          dia_insc|  sexo| fecha_nac|          anio_nac|   mes_nac|           dia_nac|             talla|              peso|         sem_gest|tipo_part|     lugar_ocur|            apgar1|            apgar5| p_emb|        prov_nac|  cant_nac|            parr_nac|area_nac|            asis_por|        nac_mad|       cod_pais| fecha_mad|          anio_mad|        mes_mad|           dia_mad|         edad_mad|         con_pren|           num_emb|           num_par|           hij_viv|            hij_vivm|           hij_nacm|               etnia|est_civil|            niv_inst|      sabe_leer|        prov_res|  cant_res|            parr_res|area_res|   residente|\n+-------+----------------+---------+--------------------+----------+------------------+----------+------------------+------+----------+------------------+----------+------------------+------------------+------------------+-----------------+---------+---------------+------------------+------------------+------+----------------+----------+--------------------+--------+--------------------+---------------+---------------+----------+------------------+---------------+------------------+-----------------+-----------------+------------------+------------------+------------------+--------------------+-------------------+--------------------+---------+--------------------+---------------+----------------+----------+--------------------+--------+------------+\n|  count|          241295|   241295|              241295|    241295|            241295|    241295|            241295|241295|    241295|            241295|    241295|            241295|            241295|            241295|           241295|   241295|         241295|            241295|            241295|241295|          241295|    241295|              241295|  241295|              241295|         241295|         241295|    241295|            241295|         241295|            241295|           241295|           241295|            241295|            241295|            241295|              241295|             241295|              241295|   241295|              241295|         241295|          241295|    241295|              241295|  241295|      241295|\n|   mean|            NULL|     NULL|                NULL|      NULL|2023.0647378454437|      NULL|15.856224576692474|  NULL|      NULL|2022.9372345054808|      NULL|15.632362875318593| 48.54522348326832|3068.7153236346126|38.37647180379106|     NULL|           NULL|  8.06699478915039| 9.019822999685006|  NULL|            NULL|      NULL|                NULL|    NULL|                NULL|           NULL|           NULL|      NULL|1995.7840330947972|           NULL|15.566298423183909|26.66393794699639|6.444480525029482| 2.262427430286187|2.1022753429212027|2.0577550301498166|0.023963271407217594|0.02028608027327071|                NULL|     NULL|                NULL|           NULL|            NULL|      NULL|                NULL|    NULL|        NULL|\n| stddev|            NULL|     NULL|                NULL|      NULL|0.6836599754432079|      NULL| 8.685787511632697|  NULL|      NULL|1.5180530471163742|      NULL| 8.784520746500172|2.4648283275783904|505.60786527826025|1.766618370681727|     NULL|           NULL|0.8670639431455726|0.6620257008977671|  NULL|            NULL|      NULL|                NULL|    NULL|                NULL|           NULL|           NULL|      NULL|6.7059178527309315|           NULL| 8.805391635264705|6.683026587725312|2.633989897152691|1.3935141612428463|1.2477506591192977|1.2242374055754184| 0.18231171867480786|0.16721776117262602|                NULL|     NULL|                NULL|           NULL|            NULL|      NULL|                NULL|    NULL|        NULL|\n|    min|                |         |                    |          |                  |          |                  |Hombre|1900/01/01|              1900|     Abril|                 1|                38|              1000|               22|  Cesárea|           Casa|                 1|                 1| Doble|           Azuay|24 de Mayo|   Ernesto Seminario|   Rural|Auxiliar de enfer...|    Ecuatoriana|       Alemania|1920/12/13|              1920|          Abril|                 1|               11|                0|                 1|                 1|                 1|                   0|                  0|Afroecuatoriana/A...|   Casada|Centro de alfabet...|             No|           Azuay|24 de Mayo|   Ernesto Seminario|   Rural|No residente|\n|    max|Zamora Chinchipe|   Zaruma|Ángel Polibio Cháves|2024/04/30|              2024|Septiembre|                 9| Mujer|2023/12/31|              2023|Septiembre|                31|   Sin información|   Sin información|  Sin información|   Normal|Sin información|   Sin información|   Sin información|Triple|Zamora Chinchipe|    Zaruma|Ángel Polibio Cháves|  Urbana|     Sin información|Sin información|Yemen, Rep. del|9999/99/99|   Sin información|Sin información|   Sin información|  Sin información|  Sin información|   Sin información|   Sin información|                16|     Sin información|    Sin información|     Sin información|    Viuda|Superior universi...|Sin información|Zamora Chinchipe|    Zaruma|Ángel Polibio Cháves|  Urbana|   Residente|\n+-------+----------------+---------+--------------------+----------+------------------+----------+------------------+------+----------+------------------+----------+------------------+------------------+------------------+-----------------+---------+---------------+------------------+------------------+------+----------------+----------+--------------------+--------+--------------------+---------------+---------------+----------+------------------+---------------+------------------+-----------------+-----------------+------------------+------------------+------------------+--------------------+-------------------+--------------------+---------+--------------------+---------------+----------------+----------+--------------------+--------+------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149875_319358320",
+      "id": "paragraph_1753845933046_1735524795",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## Conversión a fecha",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eConversión a fecha\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149875_42791053",
+      "id": "paragraph_1753845939029_673774673",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "import org.apache.spark.sql.functions._\n\nval dfNacidosClean \u003d dfNacidos\n  .withColumn(\"fecha_insc_date\", to_date(col(\"fecha_insc\"), \"yyyy/MM/dd\"))\n  .withColumn(\"fecha_nac_date\", to_date(col(\"fecha_nac\"), \"yyyy/MM/dd\"))\n  .withColumn(\"fecha_mad_date\", to_date(col(\"fecha_mad\"), \"yyyy/MM/dd\"))\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mdfNacidosClean\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 48 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149875_1293170585",
+      "id": "paragraph_1753845948917_1113126510",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## Variables numéricas",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eVariables numéricas\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149875_2088854901",
+      "id": "paragraph_1753845955539_72449054",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "val columnasNumericas \u003d Seq(\n  \"anio_nac\", \"dia_nac\", \"talla\", \"peso\", \"sem_gest\", \"apgar1\", \"apgar5\",\n  \"anio_mad\", \"edad_mad\", \"num_emb\", \"num_par\", \"hij_viv\", \"hij_vivm\", \"hij_nacm\",\n  \"anio_insc\", \"dia_insc\", \"dia_mad\"\n)\n\nval dfNacidosNumerico \u003d columnasNumericas.foldLeft(dfNacidosClean) { (df, colName) \u003d\u003e\n  df.withColumn(colName, col(colName).cast(\"int\"))\n}\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.875",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcolumnasNumericas\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(anio_nac, dia_nac, talla, peso, sem_gest, apgar1, apgar5, anio_mad, edad_mad, num_emb, num_par, hij_viv, hij_vivm, hij_nacm, anio_insc, dia_insc, dia_mad)\n\u001b[1m\u001b[34mdfNacidosNumerico\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 48 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149875_1289954155",
+      "id": "paragraph_1753845963493_859176687",
+      "dateCreated": "2025-07-31 21:09:09.875",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## Variables de tipo texto",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.876",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eVariables de tipo texto\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_275521704",
+      "id": "paragraph_1753845970802_212016606",
+      "dateCreated": "2025-07-31 21:09:09.876",
+      "status": "READY"
+    },
+    {
+      "text": "val columnasTexto \u003d Seq(\n  \"prov_insc\", \"cant_insc\", \"parr_insc\", \"mes_insc\", \"sexo\", \"mes_nac\", \"tipo_part\",\n  \"lugar_ocur\", \"p_emb\", \"prov_nac\", \"cant_nac\", \"parr_nac\", \"area_nac\", \"asis_por\",\n  \"nac_mad\", \"cod_pais\", \"mes_mad\", \"etnia\", \"est_civil\", \"niv_inst\",\n  \"sabe_leer\", \"prov_res\", \"cant_res\", \"parr_res\", \"area_res\", \"residente\"\n)\n\nval dfNacidosTexto \u003d columnasTexto.foldLeft(dfNacidosNumerico) { (df, colName) \u003d\u003e\n  df.withColumn(colName, col(colName).cast(\"string\"))\n}\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.876",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcolumnasTexto\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(prov_insc, cant_insc, parr_insc, mes_insc, sexo, mes_nac, tipo_part, lugar_ocur, p_emb, prov_nac, cant_nac, parr_nac, area_nac, asis_por, nac_mad, cod_pais, mes_mad, etnia, est_civil, niv_inst, sabe_leer, prov_res, cant_res, parr_res, area_res, residente)\n\u001b[1m\u001b[34mdfNacidosTexto\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 48 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_1934243424",
+      "id": "paragraph_1753846074606_27832868",
+      "dateCreated": "2025-07-31 21:09:09.876",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n## Reemplazar vacios/nulos por 0 o sin información",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.876",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eReemplazar vacios/nulos por 0 o sin información\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_1166787072",
+      "id": "paragraph_1753846101962_1019364019",
+      "dateCreated": "2025-07-31 21:09:09.876",
+      "status": "READY"
+    },
+    {
+      "text": "val columnasNumericasConSinInformacion \u003d Seq(\n  \"talla\", \"sem_gest\", \"apgar1\", \"apgar5\", \"anio_mad\", \"edad_mad\",\n  \"num_emb\", \"num_par\", \"hij_vivm\", \"hij_nacm\", \"dia_mad\", \"anio_insc\", \"dia_insc\"\n)",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.876",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcolumnasNumericasConSinInformacion\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(talla, sem_gest, apgar1, apgar5, anio_mad, edad_mad, num_emb, num_par, hij_vivm, hij_nacm, dia_mad, anio_insc, dia_insc)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_908580409",
+      "id": "paragraph_1753846160085_1101751868",
+      "dateCreated": "2025-07-31 21:09:09.876",
+      "status": "READY"
+    },
+    {
+      "text": "val dfNumericoLimpio \u003d columnasNumericasConSinInformacion.foldLeft(dfNacidosClean) { (df, colName) \u003d\u003e\r\n  df.withColumn(colName,\r\n    when(col(colName).isNull || trim(col(colName)) \u003d\u003d\u003d \"\" || col(colName) \u003d\u003d\u003d \"Sin información\", \"0\")\r\n      .otherwise(col(colName))\r\n  ).withColumn(colName, col(colName).cast(\"int\"))\r\n}",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.876",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfNumericoLimpio\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 48 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_537038049",
+      "id": "paragraph_1753846166385_734054617",
+      "dateCreated": "2025-07-31 21:09:09.876",
+      "status": "READY"
+    },
+    {
+      "text": "val dfNumericoFinal \u003d columnasNumericas.diff(columnasNumericasConSinInformacion).foldLeft(dfNumericoLimpio) {\r\n  (df, colName) \u003d\u003e df.withColumn(colName, col(colName).cast(\"int\"))\r\n}",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.876",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfNumericoFinal\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 48 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_1453566794",
+      "id": "paragraph_1753846175364_864617823",
+      "dateCreated": "2025-07-31 21:09:09.876",
+      "status": "READY"
+    },
+    {
+      "text": "val dfTextoFinal \u003d columnasTexto.foldLeft(dfNumericoFinal) { (df, colName) \u003d\u003e\r\n  df.withColumn(colName,\r\n    when(col(colName).isNull || trim(col(colName)) \u003d\u003d\u003d \"\", \"Sin información\")\r\n      .otherwise(col(colName).cast(\"string\"))\r\n  )\r\n}",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.876",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfTextoFinal\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 48 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_557854279",
+      "id": "paragraph_1753846181343_1919572814",
+      "dateCreated": "2025-07-31 21:09:09.876",
+      "status": "READY"
+    },
+    {
+      "text": "val dfNacidosCleanFinal \u003d dfTextoFinal",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.877",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfNacidosCleanFinal\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [prov_insc: string, cant_insc: string ... 48 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149876_1824178829",
+      "id": "paragraph_1753846188761_1535794123",
+      "dateCreated": "2025-07-31 21:09:09.877",
+      "status": "READY"
+    },
+    {
+      "text": "dfNacidosCleanFinal.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.877",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- prov_insc: string (nullable \u003d true)\n |-- cant_insc: string (nullable \u003d true)\n |-- parr_insc: string (nullable \u003d true)\n |-- fecha_insc: string (nullable \u003d true)\n |-- anio_insc: integer (nullable \u003d true)\n |-- mes_insc: string (nullable \u003d true)\n |-- dia_insc: integer (nullable \u003d true)\n |-- sexo: string (nullable \u003d true)\n |-- fecha_nac: string (nullable \u003d true)\n |-- anio_nac: integer (nullable \u003d true)\n |-- mes_nac: string (nullable \u003d true)\n |-- dia_nac: integer (nullable \u003d true)\n |-- talla: integer (nullable \u003d true)\n |-- peso: integer (nullable \u003d true)\n |-- sem_gest: integer (nullable \u003d true)\n |-- tipo_part: string (nullable \u003d true)\n |-- lugar_ocur: string (nullable \u003d true)\n |-- apgar1: integer (nullable \u003d true)\n |-- apgar5: integer (nullable \u003d true)\n |-- p_emb: string (nullable \u003d true)\n |-- prov_nac: string (nullable \u003d true)\n |-- cant_nac: string (nullable \u003d true)\n |-- parr_nac: string (nullable \u003d true)\n |-- area_nac: string (nullable \u003d true)\n |-- asis_por: string (nullable \u003d true)\n |-- nac_mad: string (nullable \u003d true)\n |-- cod_pais: string (nullable \u003d true)\n |-- fecha_mad: string (nullable \u003d true)\n |-- anio_mad: integer (nullable \u003d true)\n |-- mes_mad: string (nullable \u003d true)\n |-- dia_mad: integer (nullable \u003d true)\n |-- edad_mad: integer (nullable \u003d true)\n |-- con_pren: string (nullable \u003d true)\n |-- num_emb: integer (nullable \u003d true)\n |-- num_par: integer (nullable \u003d true)\n |-- hij_viv: integer (nullable \u003d true)\n |-- hij_vivm: integer (nullable \u003d true)\n |-- hij_nacm: integer (nullable \u003d true)\n |-- etnia: string (nullable \u003d true)\n |-- est_civil: string (nullable \u003d true)\n |-- niv_inst: string (nullable \u003d true)\n |-- sabe_leer: string (nullable \u003d true)\n |-- prov_res: string (nullable \u003d true)\n |-- cant_res: string (nullable \u003d true)\n |-- parr_res: string (nullable \u003d true)\n |-- area_res: string (nullable \u003d true)\n |-- residente: string (nullable \u003d true)\n |-- fecha_insc_date: date (nullable \u003d true)\n |-- fecha_nac_date: date (nullable \u003d true)\n |-- fecha_mad_date: date (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149877_1751014950",
+      "id": "paragraph_1753846197487_278662885",
+      "dateCreated": "2025-07-31 21:09:09.877",
+      "status": "READY"
+    },
+    {
+      "text": "val columnas \u003d Seq(\"anio_insc\", \"dia_insc\", \"dia_mad\", \"hij_vivm\", \"hij_nacm\")\r\ndfNacidosCleanFinal.select(\r\n  columnas.map(c \u003d\u003e count(when(col(c).isNull, c)).alias(s\"${c}_nulos\")): _*\r\n).show()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.877",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------+--------------+-------------+--------------+--------------+\n|anio_insc_nulos|dia_insc_nulos|dia_mad_nulos|hij_vivm_nulos|hij_nacm_nulos|\n+---------------+--------------+-------------+--------------+--------------+\n|              0|             0|            0|             0|             0|\n+---------------+--------------+-------------+--------------+--------------+\n\n\u001b[1m\u001b[34mcolumnas\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(anio_insc, dia_insc, dia_mad, hij_vivm, hij_nacm)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149877_1984675606",
+      "id": "paragraph_1753846209138_939636535",
+      "dateCreated": "2025-07-31 21:09:09.877",
+      "status": "READY"
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2025-07-31 21:09:09.877",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1753996149877_796086797",
+      "id": "paragraph_1753846231640_125388884",
+      "dateCreated": "2025-07-31 21:09:09.877",
+      "status": "READY"
+    }
+  ],
+  "name": "avances2",
+  "id": "2M2NC36KN",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
