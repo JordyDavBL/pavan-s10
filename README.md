@@ -82,7 +82,7 @@ Se organizaron los resultados para presentar hallazgos relevantes de forma clara
 
 
 ## ***Utilidad del Análisis***
-Este proyecto permite:
+**Este proyecto permite:**
 * Evaluar condiciones de salud y sociales de madres y recién nacidos.
 * Detectar zonas de riesgo (alta cesárea, baja instrucción, partos domiciliarios).
 * Apoyar con datos el diseño de políticas públicas de salud materna.
